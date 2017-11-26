@@ -1,5 +1,5 @@
-import Vue from './node_modules/vue/dist/vue.js'
-import Hello from './components/firstVueComponent';
+import Vue from 'vue'
+import Hello from './components/firstVueComponent.vue';
 new Vue({
     components: {hello: Hello},
     el: "#app",

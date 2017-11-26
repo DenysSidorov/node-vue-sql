@@ -12,5 +12,18 @@
     "sql"
   ],
   "author": "Denis Sidorov",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "vue": "*",
+    "vue-router": "*"
+  },
+  "devDependencies": {
+    "webpack": "*",
+    "vue-loader": "*",
+    "buble": "*",
+    "buble-loader": "*",
+    "html-webpack-plugin": "*",
+    "css-loader": "*",
+    "vue-template-compiler": "*"
+  }
 }

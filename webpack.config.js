@@ -1,5 +1,7 @@
-var  path = require('path');
-module.exports = {
+var path = require('path');
+var  webpack = require('webpack');
+var env = 'development';
+var config =  {
     context: path.resolve(__dirname, './src'),
     // This is the "main" file which should include all other modules
     entry: './app.js',
@@ -15,7 +17,7 @@ module.exports = {
     module: {
         // Special compilation rules
         loaders: [
-            { test: /\.html$/, use: 'vue-template-loader' },
+            {test: /\.html$/, use: 'vue-template-loader'},
             {
                 // Ask webpack to check: If this file ends with .js, then apply some transforms
                 test: /\.js$/,
@@ -30,6 +32,22 @@ module.exports = {
             }
         ]
     },
+    plugins: [
+
+        new webpack.LoaderOptionsPlugin({
+            vue: {
+                loaders: {
+                    scss: 'style!css!sass'
+                }
+            }
+        }),
+        new webpack.DefinePlugin({
+                'process.env': {
+                    NODE_ENV: '"development"'
+                }
+            }
+        )
+    ],
     devServer: {
         // historyApiFallback: {
         //     index: 'index2.html',
@@ -44,12 +62,30 @@ module.exports = {
         //     target: 'http://localhost:3000',
         // }]
     },
+    resolve: {
+        alias: {
+            'vue$': 'vue/dist/vue.esm.js'  // Resolving the vue var for standalone build
+        }
+    },
     // vue: {
     //     loaders: {
     //         js: 'babel'
     //     }
     // }
 }
+module.exports = config;
+
+// if (env === 'production') {
+//     var UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
+//
+//     config.plugins.push(new UglifyJsPlugin({minimize: true}));
+//     config.plugins.push(new webpack.DefinePlugin({
+//             'process.env': {
+//                 NODE_ENV: '"production"'
+//             }
+//         }
+//     ));
+// }
 
 // module.exports = {
 //     module: {

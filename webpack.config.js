@@ -14,6 +14,7 @@ module.exports = {
     module: {
         // Special compilation rules
         loaders: [
+            { test: /\.html$/, use: 'vue-template-loader' },
             {
                 // Ask webpack to check: If this file ends with .js, then apply some transforms
                 test: /\.js$/,

@@ -9,7 +9,7 @@ module.exports = {
         path: path.resolve(__dirname, './www'),
         // With the filename `build.js` so it's dist/build.js
         filename: 'build.js',
-        publicPath: '/www'
+        publicPath: '/'
     },
 
     module: {
@@ -29,6 +29,20 @@ module.exports = {
                 loader: 'vue-loader'
             }
         ]
+    },
+    devServer: {
+        // historyApiFallback: {
+        //     index: 'index2.html',
+        // }, // cannot GET *url* after press f5
+        hot: true,
+        // enable HMR on the server
+        host: "localhost", // default
+        port: 8080, // default
+        contentBase: path.join(__dirname, 'www'), // отдает по умолчанию(можн указ люб папку), если нет бандлов
+        // proxy: [{
+        //     path: '*',
+        //     target: 'http://localhost:3000',
+        // }]
     },
     // vue: {
     //     loaders: {

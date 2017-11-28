@@ -24,9 +24,9 @@ var config =  {
                     }}},
             {test: /\.(png|jpg|gif)$/, loader: 'file?name=[name].[ext]?[hash]',},
             // { test: /\.styl$/, loader: 'style-loader!css-loader!stylus-loader' }
-            // {test: /\.styl$/i, use: ['style-loader', 'css-loader', 'stylus-loader']}
+            {test: /\.styl$/i, use: ['style-loader', 'css-loader', 'stylus-loader']}
             // {test: /\.(scss|sass)$/, use: ['css-loader?sourceMap', 'sass-loader']}
-            {test: /\.(scss|sass)$/, use: ["style-loader" ,"css-loader" , "sass-loader"]}
+            // {test: /\.(scss|sass)$/, use: ["style-loader" ,"css-loader" , "sass-loader"]}
             // {
             //     test: /\.s[a|c]ss$/,
             //     loader: 'style!css!sass'

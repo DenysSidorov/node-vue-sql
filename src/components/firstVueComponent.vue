@@ -21,14 +21,14 @@
     }
 </script>
 
-<!--<style lang="sass-loader">-->
+<!--<style lang="sass-loader" rel="stylesheet/scss" type="text/css">-->
    <!--@import "testStyles.scss";-->
     <!--div {-->
        <!--color: $colRed;-->
    <!--}-->
 <!--</style>-->
 
-<style lang="stylus-loader" scoped>
+<style lang="stylus-loader" scoped rel="stylesheet/stylus" type="text/css">
     @import 'test.styl';
     div
         color colorRD

@@ -14,7 +14,8 @@ var config =  {
         loaders: [
             {test: /\.html$/, use: 'vue-template-loader'},
             {test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/},
-            {test: /\.vue$/, loader: 'vue-loader'}
+            {test: /\.vue$/, loader: 'vue-loader'},
+            {test: /\.(png|jpg|gif)$/, loader: 'file?name=[name].[ext]?[hash]',},
         ]
     },
     plugins: [

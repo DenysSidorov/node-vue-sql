@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="testStylus">
         <div class="message">Value is : {{ count2 }}</div>
         <a href="#" @click.prevent="increment">Increment</a>
     </div>
@@ -21,5 +21,7 @@
     }
 </script>
 
-<style>
+<style lang="stylus">
+    .testStylus
+        color red
 </style>

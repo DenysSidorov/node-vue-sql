@@ -20,22 +20,24 @@
     "vue-router": "*"
   },
   "devDependencies": {
-    "webpack": "*",
-    "buble": "*",
-    "buble-loader": "*",
-    "html-webpack-plugin": "*",
-    "vue-template-compiler": "*",
-
-    "vue-hot-reload-api": "^1.2.0",
-    "css-loader": "^0.23.0",
-    "style-loader": "^0.13.0",
-    "vue-loader": "^7.3.0",
-    "vue-html-loader": "^1.0.0",
     "babel-core": "^6.1.2",
     "babel-loader": "^6.1.0",
     "babel-plugin-transform-runtime": "^6.1.2",
     "babel-preset-es2015": "^6.1.2",
     "babel-preset-stage-0": "^6.1.2",
-    "babel-runtime": "^5.8.0"
+    "babel-runtime": "^5.8.0",
+    "buble": "*",
+    "buble-loader": "*",
+    "css-loader": "^0.23.0",
+    "file-loader": "^0.8.4",
+    "html-webpack-plugin": "*",
+    "style-loader": "^0.13.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.1",
+    "vue-hot-reload-api": "^1.2.0",
+    "vue-html-loader": "^1.0.0",
+    "vue-loader": "^7.3.0",
+    "vue-template-compiler": "*",
+    "webpack": "*"
   }
 }

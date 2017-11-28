@@ -14,18 +14,33 @@ var config =  {
         loaders: [
             {test: /\.html$/, use: 'vue-template-loader'},
             {test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/},
-            {test: /\.vue$/, loader: 'vue-loader'},
+            {test: /\.vue$/, loader: 'vue-loader',
+                options: {
+                    // `loaders` will overwrite the default loaders.
+                    // The following config will cause all <script> tags without "lang"
+                    // attribute to be loaded with coffee-loader
+                    loaders: {
+                        scss: 'style-loader!css-loader!sass-loader'
+                    }}},
             {test: /\.(png|jpg|gif)$/, loader: 'file?name=[name].[ext]?[hash]',},
+            // { test: /\.styl$/, loader: 'style-loader!css-loader!stylus-loader' }
+            // {test: /\.styl$/i, use: ['style-loader', 'css-loader', 'stylus-loader']}
+            // {test: /\.(scss|sass)$/, use: ['css-loader?sourceMap', 'sass-loader']}
+            {test: /\.(scss|sass)$/, use: ["style-loader" ,"css-loader" , "sass-loader"]}
+            // {
+            //     test: /\.s[a|c]ss$/,
+            //     loader: 'style!css!sass'
+            // }
         ]
     },
     plugins: [
-        new webpack.LoaderOptionsPlugin({
-            vue: {
-                loaders: {
-                    scss: 'style!css!sass'
-                }
-            }
-        }),
+        // new webpack.LoaderOptionsPlugin({
+        //     vue: {
+        //         loaders: {
+        //             scss: 'style-loader!css-loader!sass-loader'
+        //         }
+        //     }
+        // }),
         new webpack.DefinePlugin({
                 'process.env': {
                     NODE_ENV: '"development"'

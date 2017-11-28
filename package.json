@@ -31,6 +31,8 @@
     "css-loader": "^0.23.0",
     "file-loader": "^0.8.4",
     "html-webpack-plugin": "*",
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.6",
     "style-loader": "^0.13.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",

@@ -1,12 +1,12 @@
 <template>
-    <div class="testStylus">
+    <div class="testStylusB">
         <div class="message">Value is : {{ count2 }}</div>
         <a href="#" @click.prevent="increment">Increment</a>
     </div>
-    </template>
+</template>
 <script>
-    import Vue from 'vue/dist/vue.js'
-    console.log(process.env);
+//    import Vue from 'vue/dist/vue.js'
+//    console.log(process.env);
     export default {
         data () {
             return {
@@ -21,7 +21,9 @@
     }
 </script>
 
-<style lang="stylus">
-    .testStylus
-        color red
+<style lang="sass-loader">
+   @import "testStyles.scss";
+    div {
+       color: $colRed;
+   }
 </style>

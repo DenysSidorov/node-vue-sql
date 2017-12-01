@@ -5,8 +5,6 @@
     </div>
 </template>
 <script>
-//    import Vue from 'vue/dist/vue.js'
-//    console.log(process.env);
     export default {
         data () {
             return {

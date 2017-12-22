@@ -4,7 +4,6 @@
   "description": "nodejs vuejs sql",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.config.js src/app.js www/bundle.js",
     "dev-server": "webpack-dev-server --inline --hot"
   },

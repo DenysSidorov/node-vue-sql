@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to Vue</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+<div id="app" >
+    <div id="mydiv" v-cooldiv:first.shadow.smoked="90">
+        <span class="first">Here is:</span>
+        <span class="second">My cool directive</span>
+    </div>
+</div>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        directives:{
+            "cooldiv": {
+                bind: function (el, binding, vnode) {
+                    el.style.background = 'cyan';
+                    let fontSize = 70;
+                    if (binding.value)
+                        fontSize = binding.value;
+                    if (binding.arg)
+                        el.getElementsByClassName(binding.arg)[0].style.fontSize = fontSize + "px";
+                    else
+                        el.style.fontSize = fontSize + "px";
+                    if (binding.modifiers['shadow'])
+                        el.style.textShadow = "5px 7px 5px rgba(0,0,0,0.3)";
+                    if (binding.modifiers['smoked'])
+                        setTimeout(() => { el.className += 'cool'; }, 2000);
+                }
+            }
+        }
+    })
+</script>
+
+<style>
+    @import url(https://fonts.googleapis.com/css?family=Finger+Paint);
+    #mydiv {
+        overflow: hidden;
+        font: 5vw/100vh "Finger Paint";
+        text-align: center;
+    }
+
+    .cool span {
+        color: transparent;
+        display: inline-block;
+        text-shadow: 0 0 0 black;
+        -webkit-animation: smoky 5s 3s both;
+        animation: smoky 5s 3s both;
+    }
+    .cool span:nth-child(even) {
+        -webkit-animation-name: smoky-mirror;
+        animation-name: smoky-mirror;
+    }
+    @-webkit-keyframes smoky {
+        60% {
+            text-shadow: 0 0 40px black;
+        }
+        to {
+            -webkit-transform: translate3d(15rem, -8rem, 0) rotate(-40deg) skewX(70deg) scale(1.5);
+            transform: translate3d(15rem, -8rem, 0) rotate(-40deg) skewX(70deg) scale(1.5);
+            text-shadow: 0 0 20px black;
+            opacity: 0;
+        }
+    }
+    @keyframes smoky {
+        60% {
+            text-shadow: 0 0 40px black;
+        }
+        to {
+            -webkit-transform: translate3d(15rem, -8rem, 0) rotate(-40deg) skewX(70deg) scale(1.5);
+            transform: translate3d(15rem, -8rem, 0) rotate(-40deg) skewX(70deg) scale(1.5);
+            text-shadow: 0 0 20px black;
+            opacity: 0;
+        }
+    }
+    @-webkit-keyframes smoky-mirror {
+        60% {
+            text-shadow: 0 0 40px black;
+        }
+        to {
+            -webkit-transform: translate3d(18rem, -8rem, 0) rotate(-40deg) skewX(-70deg) scale(2);
+            transform: translate3d(18rem, -8rem, 0) rotate(-40deg) skewX(-70deg) scale(2);
+            text-shadow: 0 0 20px black;
+            opacity: 0;
+        }
+    }
+    @keyframes smoky-mirror {
+        60% {
+            text-shadow: 0 0 40px black;
+        }
+        to {
+            -webkit-transform: translate3d(18rem, -8rem, 0) rotate(-40deg) skewX(-70deg) scale(2);
+            transform: translate3d(18rem, -8rem, 0) rotate(-40deg) skewX(-70deg) scale(2);
+            text-shadow: 0 0 20px black;
+            opacity: 0;
+        }
+    }
+    .cool span:nth-of-type(1) {
+        -webkit-animation-delay: 3.1s;
+        animation-delay: 3.1s;
+    }
+    .cool span:nth-of-type(2) {
+        -webkit-animation-delay: 3.2s;
+        animation-delay: 3.2s;
+    }
+</style>
+</body>
+</html>
